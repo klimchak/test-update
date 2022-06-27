@@ -1,14 +1,14 @@
 {
   "name": "test-update",
   "productName": "Simple Updater Example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Example of using electron-simple-updater",
   "main": "app/main.js",
   "scripts": {
     "postinstall": "install-app-deps",
     "start": "electron .",
     "dist": "electron-builder",
-    "publish": "publish publisher.json",
+    "publish": "publish",
     "release": "npm run dist && npm run publish"
   },
   "author": "ilya klim",
@@ -34,14 +34,14 @@
     }
   },
   "updater": {
-    "url": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/updates.json"
+    "url": "https://github.com/klimchak/test-update/blob/master/updates.json"
   },
   "engines": {
     "node": ">=6.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/megahertz/electron-simple-updater.git"
+    "url": "git+https://github.com/klimchak/test-update.git"
   },
   "dependencies": {
     "electron-simple-updater": "^2.0.0-beta.1"
