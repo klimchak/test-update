@@ -1,0 +1,55 @@
+{
+  "name": "test-update",
+  "productName": "Simple Updater Example",
+  "version": "0.0.1",
+  "description": "Example of using electron-simple-updater",
+  "main": "app/main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "electron .",
+    "dist": "electron-builder",
+    "publish": "publish publisher.json",
+    "release": "npm run dist && npm run publish"
+  },
+  "author": "ilya klim",
+  "license": "MIT",
+  "private": true,
+  "build": {
+    "appId": "com.test-update",
+    "files": [
+      "!publisher.json",
+      "!README.md",
+      "!updates.json"
+    ],
+    "linux": {
+      "category": "Development",
+      "publish": false,
+      "target": "AppImage"
+    },
+    "win": {
+      "target": "squirrel"
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/build/icon.ico"
+    }
+  },
+  "updater": {
+    "url": "https://raw.githubusercontent.com/megahertz/electron-simple-updater/master/example/updates.json"
+  },
+  "engines": {
+    "node": ">=6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megahertz/electron-simple-updater.git"
+  },
+  "dependencies": {
+    "electron-simple-updater": "^2.0.0-beta.1"
+  },
+  "devDependencies": {
+    "electron": "*",
+    "electron-builder": "*",
+    "electron-simple-publisher": "*",
+    "electron-builder-squirrel-windows": "*"
+  }
+}
